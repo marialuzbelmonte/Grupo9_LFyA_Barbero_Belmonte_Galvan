@@ -3,7 +3,7 @@ import os
  
 # Extrae funciones de código Python, ya sea de un string, un archivo o un directorio completo.
 def extraer_de_codigo(codigo, archivo="<pegado>"):
-    """Parsea un string de código y devuelve la lista de funciones que contiene."""
+    # Parsea un string de código y devuelve la lista de funciones que contiene.
     arbol = ast.parse(codigo)  # genera el árbol sintáctico (AST) del código
     funciones = []
  
@@ -21,7 +21,7 @@ def extraer_de_codigo(codigo, archivo="<pegado>"):
  
 # Extrae funciones de un archivo .py
 def extraer_de_archivo(ruta, nombre_archivo=None):
-    """Lee un archivo .py y devuelve sus funciones."""
+    # Lee un archivo .py y devuelve sus funciones.
     if nombre_archivo is None:
         nombre_archivo = ruta
  
@@ -32,7 +32,7 @@ def extraer_de_archivo(ruta, nombre_archivo=None):
  
 # Extrae funciones de todos los archivos .py en un directorio
 def extraer_de_directorio(directorio):
-    """Recorre recursivamente el directorio y devuelve las funciones de todos los .py."""
+    # Recorre recursivamente el directorio y devuelve las funciones de todos los .py.
     funciones = []
  
     # os.walk recorre el directorio y todos sus subdirectorios
@@ -51,7 +51,7 @@ def extraer_de_directorio(directorio):
  
  
 def buscar_funcion(funciones, archivo, nombre):
-    """Busca una función por archivo y nombre. Devuelve None si no la encuentra."""
+    # Busca una función por archivo y nombre. Devuelve None si no la encuentra.
     for funcion in funciones:
         if funcion["archivo"] == archivo and funcion["nombre"] == nombre:
             return funcion
